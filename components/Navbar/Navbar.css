@@ -1,0 +1,139 @@
+/* General Reset and Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  position: relative;
+  height: fit-content
+
+}
+
+.navbar-logo img {
+  width: 65px;         /* Default width for larger screens */
+  height: auto;        /* Maintain aspect ratio */
+  max-width: 100%;     /* Ensure it scales down if necessary */
+  transition: width 0.3s ease;  /* Smooth transition for resizing */
+  padding: 4px;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-items a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .navbar-items {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-items {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #4CAF50;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .navbar-items.show {
+    display: flex;
+  }
+
+  .navbar-items a,
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff30;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-logo img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo img {
+    width: 60px;
+  }
+
+  .navbar-items a {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .navbar-toggle {
+    font-size: 26px;
+  }
+}
+
+/* Mobile View for the Search Bar */
+@media (max-width: 400px) {
+  .search-bar input {
+    width: 100%;
+    padding: 12px;
+  }
+}
